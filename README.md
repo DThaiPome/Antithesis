@@ -1,7 +1,5 @@
 # Antithesis
-Game Studio Fall 2020 project - NOT ALL CODE IS MINE (SEE README)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Game Studio Fall 2020 project 
 
 # Credits
 This repository is a showcase of the work of the Northeastern University Fall 2020 Game Studio development team. This team was lead by Pranav Gopan, and consisted of:
