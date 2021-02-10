@@ -8,6 +8,7 @@ This repository is a showcase of the work of the Northeastern University Fall 20
 * Rafael Arias Torres
 * Jack Speake
 * Jim Wu
+
 Besides the dev team, several other students and faculty were involved in other parts of this production.
 
 # What is this?
