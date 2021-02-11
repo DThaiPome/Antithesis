@@ -54,6 +54,7 @@ public class RatBehaviour : AEnemyBehaviour
         Chasing, Grabbing
     }
 
+    // Target destination is at the player unless grabbing.
     protected override Vector3 GetDestination()
     {
         switch(this.currentState)
@@ -66,7 +67,8 @@ public class RatBehaviour : AEnemyBehaviour
                 return this.transform.position;
         }
     }
-
+    
+    // Rat speed is 2 unless grabbing.
     protected override float GetMoveSpeed()
     {
          switch (this.currentState)
@@ -167,7 +169,7 @@ public class RatBehaviour : AEnemyBehaviour
     }
 
     /// <summary>
-    /// Stop grabbing .. eventually (TBD - should be when the player shakes their hands enough).
+    /// Stop grabbing .. eventually
     /// </summary>
     private void GrabbingUpdate()
     {
@@ -185,6 +187,7 @@ public class RatBehaviour : AEnemyBehaviour
         this.transform.rotation *= tiltUp;
     }
 
+    // Revert the player's speed to normal and die.
     private void StopGrabbing()
     {
         this.slowdownBuff.StopGrabbing();
@@ -198,17 +201,20 @@ public class RatBehaviour : AEnemyBehaviour
         this.Die();
     }
 
+    // Used for if the rat doesn't die when it stops grabbing.
     private void PushAwayFromPlayer()
     {
         this.LookAtPlayerLaterally();
         this.agent.Move(this.transform.forward * -this.distanceOnUnlatch);
     }
 
+    // Has the player flailed their arms around enough?
     private bool StillGrabbing()
     {
         return this.shakeOffThresholdSoFar < this.shakeOffThreshold;
     }
 
+    // Measure how much the player's arm flailing impacts the grabing.
     private void OnShakenOff(float input)
     {
         if (this.currentState == RatState.Grabbing && input >= this.minSpeedToShakeOff)
@@ -217,6 +223,7 @@ public class RatBehaviour : AEnemyBehaviour
         }
     }
 
+    // Scrolls kill the rat
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name.Contains("Scroll"))
@@ -224,7 +231,8 @@ public class RatBehaviour : AEnemyBehaviour
             this.Die();
         }
     }
-
+    
+    // Getting kicked while grabbing the player just makes them let go faster.
     protected override void GetKicked(IPlayerKick kickData)
     {
         switch(this.currentState)
