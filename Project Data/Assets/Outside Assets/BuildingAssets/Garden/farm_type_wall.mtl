@@ -1,0 +1,24 @@
+newmtl lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd farm_type_wall_wall_BaseColor.png
+map_Ka farm_type_wall_wall_Height.png
+bump farm_type_wall_wall_Normal.png -bm 1
+Ni 1.00
+newmtl lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd farm_type_wall_bolt_BaseColor.png
+Ni 1.00
+newmtl lambert4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd farm_type_wall_gate_BaseColor.png
+bump farm_type_wall_gate_Normal.png -bm 1
+Ni 1.00
